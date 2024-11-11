@@ -1,0 +1,10 @@
+<form method="post" action="{% url 'add_comment' post_id %}">
+    {% csrf_token %}
+    <label for="author">Autor:</label>
+    <input type="text" name="author" required>
+    
+    <label for="comment">Comentário:</label>
+    <textarea name="comment" required></textarea>
+    
+    <button type="submit">Adicionar Comentário</button>
+</form>

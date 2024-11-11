@@ -1,0 +1,46 @@
+{
+    "id": "ff80818192925da70193125db1cf1895",
+    "name": "Samsung Galaxy S23 Ultra",
+    "createdAt": "2024-11-09T19:19:10.543+00:00",
+    "data": {
+        "year": 2023,
+        "price": 1199.99,
+        "CPU_model": "Snapdragon 8 Gen 2",
+        "Storage": "512 GB",
+        "img": "https://www.lavanguardia.com/andro4all/hero/2023/04/galaxy-s23-vs-galaxy-s23-ultra-portada.jpg?width=1200&aspect_ratio=16:9",
+        "comments": [
+            {
+                "author": "Ana Souza",
+                "comment": "Excelente c\u00e2mera e desempenho!"
+            },
+            {
+                "author": "Pedro Lima",
+                "comment": "A bateria dura o dia todo!"
+            }
+        ]
+    }
+}
+
+{
+    "id": "ff80818192925da70193125db4751896",
+    "name": "Apple Watch Series 9",
+    "createdAt": "2024-11-09T19:19:11.222+00:00",
+    "data": {
+        "year": 2023,
+        "price": 399.99,
+        "CPU_model": "Apple S9 Chip",
+        "Battery_life": "18 hours",
+        "img": "https://www.apple.com/newsroom/images/2023/09/apple-introduces-the-advanced-new-apple-watch-series-9/article/Apple-Watch-S9-display-2000-nits-230912_big.jpg.large.jpg",
+        "comments": [
+            {
+                "author": "Jo\u00e3o Oliveira",
+                "comment": "\u00d3timo para monitoramento de sa\u00fade."
+            },
+            {
+                "author": "Marina Silva",
+                "comment": "Compat\u00edvel com muitos apps!"
+            }
+        ]
+    }
+}
+

@@ -1,0 +1,114 @@
+<!-- blog_app/templates/blog.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog de Tecnologia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+        }
+        .comments {
+            margin-top: 15px;
+            padding-left: 10px;
+            width: 100%;
+        }
+        .comment-buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .comment-buttons button {
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .comment-buttons button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .post {
+                width: 100%;
+            }
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="width: 100%; text-align: center;">Últimas Postagens</h1>
+        {% for post in posts %}
+            <div class="post">
+                <h2>{{ post.name }}</h2>
+                <img src="{{ post.data.img }}" alt="{{ post.name }}">
+                <p><strong>Ano:</strong> {{ post.data.year }}</p>
+                <p><strong>Preço:</strong> ${{ post.data.price }}</p>
+                <p><strong>Modelo do CPU:</strong> {{ post.data.CPU_model }}</p>
+                <p><strong>Armazenamento:</strong> {{ post.data.Storage|default:"N/A" }}</p>
+                <p><strong>Duração da Bateria:</strong> {{ post.data.Battery_life|default:"N/A" }}</p>
+
+                <div class="comments">
+                    <div class="divider"></div>
+                    <h3>Comentários:</h3>
+                    {% for comment in post.data.comments %}
+                        <p><strong>{{ comment.author }}:</strong> {{ comment.comment }}</p>
+                    {% endfor %}
+
+                    <div class="comments">
+                        <div class="divider"></div>
+                        <h3>Comentários:</h3>
+                        {% for comment in post.data.comments %}
+                            <p><strong>{{ comment.author }}:</strong> {{ comment.comment }}</p>
+                        {% endfor %}
+    
+                        <div class="comment-buttons">
+                            <a href="{% url 'add_comentario' post_id=post.id %}">
+                                <button>Adicionar Comentário</button>
+                            </a>
+                            <a href="{% url 'editar_comentario' post.id comment.id %}">
+                                <button>Editar Comentário</button>
+                            </a>
+                            <a href="{% url 'deletar_comentario' post.id comment.id %}">
+                                <button>Deletar Comentário</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

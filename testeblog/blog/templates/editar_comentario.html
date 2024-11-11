@@ -1,0 +1,10 @@
+<form method="post" action="{% url 'edit_comment' post_id comment_id %}">
+    {% csrf_token %}
+    <label for="author">Autor:</label>
+    <input type="text" name="author" value="{{ comment.author }}" required>
+    
+    <label for="comment">Comentário:</label>
+    <textarea name="comment" required>{{ comment.comment }}</textarea>
+    
+    <button type="submit">Salvar Alterações</button>
+</form>
