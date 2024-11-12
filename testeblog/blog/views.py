@@ -44,6 +44,8 @@ def index(request):
     
     return render(request, "blog.html", {"posts": posts})
 
+#funções em teste
+
 def add_comentario(request, post_id):
     
     if request.method == 'POST':
